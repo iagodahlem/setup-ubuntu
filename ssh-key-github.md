@@ -13,5 +13,9 @@ $ -> xclip -sel clip < ~/.ssh/id_rsa.pub
 
 5. Add the SSH Key on Github Account
 
+6. Test Connection
+$ -> ssh -T git@github.com
+
 List existing SSH Keys
 $ -> ls -al ~/.ssh
+
