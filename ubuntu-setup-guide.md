@@ -12,7 +12,7 @@ sudo apt-get upgrade
 sudo apt-get dist-upgrade
 ```
 
-## 2. Terminal ZSH - oh-my-zsh
+## 2. ZSH - Oh-My-Zsh
 
 ```sh
 sudo apt-get install zsh
@@ -40,34 +40,34 @@ sudo apt-get install vlc
 
 #### Browser
 
-* [Google Chrome Stable](#)
+* [Google Chrome Stable](https://www.google.com.br/chrome/browser/desktop/)
 
 #### Development
 
-* [Sublime Text](#)
-* [GitKraken](#)
-* [VirtualBox](#)
-* [Slack](#)
-* [Mysql Workbench](#)
+* [Sublime Text](https://www.sublimetext.com/)
+* [GitKraken](http://www.gitkraken.com/)
+* [VirtualBox](https://www.virtualbox.org/)
+* [Slack](https://slack.com/)
+* [Mysql Workbench](https://www.mysql.com/products/workbench/)
 
 #### Other
 
-* [Skype](#)
-* [DropBox](#)
+* [Skype](http://www.skype.com/)
+* [DropBox](http://www.skype.com/pt-br/)
 
 ### Installed by Software Center
 
-* ReText
-* Unity Tweak Tool
+* [ReText](https://sourceforge.net/projects/retext/)
+* [Unity Tweak Tool](https://apps.ubuntu.com/cat/applications/unity-tweak-tool/)
 
 ## 4. NVM
 
 ```sh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
-nvm install 5.2.0
+nvm install NODE_VERSION
 
-nvm use 5.2.0
+nvm use NODE_VERSION
 ```
 
 ## 5. Java JDK/JRE 8 - Eclipse IDE
@@ -127,30 +127,30 @@ sudo tlp start
 
 ## 7. Generating SSH Key for Github
 
-1. Creates a new ssh key, using the provided email as a label
+Creates a new ssh key, using the provided email as a label
 ```sh
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-2. Start the ssh-agent in the background
+Start the ssh-agent in the background
 ```sh
 eval "$(ssh-agent -s)"
 ```
 
-3. Add your SSH key to the ssh-agent
+Add your SSH key to the ssh-agent
 ```sh
 ssh-add ~/.ssh/id_rsa
 ```
 
-4. Copy the SSH key to your clipboard.
+Copy the SSH key to your clipboard.
 ```sh
 sudo apt-get install xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub
 ```
 
-5. Add the SSH Key on Github Account
+Add the SSH Key on Github Account
 
-6. Test your Connection
+Test your Connection
 ```sh
 ssh -T git@github.com
 ```
@@ -169,4 +169,47 @@ gsettings set com.canonical.Unity always-show-menus true
 > To remove
 ```sh
 gsettings set com.canonical.Unity always-show-menus false
+```
+
+## 9. Ubuntu Plugins
+
+### System Load Indicator
+
+```sh
+sudo apt-get install indicator-multiload
+```
+
+### Preload
+
+```sh
+sudo apt-get install preload
+```
+
+### Caffeine
+
+```sh
+sudo apt-add-repository ppa:caffeine-developers/ppa
+
+sudo apt-get update
+
+sudo apt-get install caffeine
+```
+
+## 10. Perfomance Configs
+
+### Show all boot files
+
+```sh
+sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop   //habilita todas os arquivos no StartUp
+```
+
+### Removes Swap Percentual
+
+```sh
+sudo sysctl vm.swappiness=10
+
+sudo gedit /etc/sysctl.conf
+
+Colar esta linha no final do arquivo
+vm.swappiness=10
 ```
