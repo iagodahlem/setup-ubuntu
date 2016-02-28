@@ -107,7 +107,7 @@ Categories=Development;IDE;
 Name[en]=Eclipse
 ```
 
-#### Removing Eclipse
+> To remove Eclipse
 
 ```sh
 sudo rm -Rf /opt/eclipse/
@@ -200,7 +200,7 @@ sudo apt-get install caffeine
 ### Show all boot files
 
 ```sh
-sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop   //habilita todas os arquivos no StartUp
+sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
 ```
 
 ### Removes Swap Percentual
