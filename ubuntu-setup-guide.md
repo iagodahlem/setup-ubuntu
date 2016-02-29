@@ -115,6 +115,11 @@ sudo rm -Rf /opt/eclipse/
 sudo rm -Rf /usr/share/applications/eclipse.desktop
 ```
 
+### Lombok
+
+sudo java -jar lombok.jar
+
+
 ## 6. TLP (Do battery during more)
 
 ```sh
