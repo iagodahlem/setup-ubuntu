@@ -44,3 +44,4 @@ This is the list of all softwares, plugins, extensions, etc, that I use.
 * system load indicator
 * preload
 * toggl
+* redshift
