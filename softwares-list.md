@@ -17,6 +17,7 @@ This is the list of all softwares, plugins, extensions, etc, that I use.
 	* grunt
 	* gulp
 	* yeoman
+	* jshint
 * chromium-browser
 * chrome-stable
 * firefox
@@ -34,14 +35,9 @@ This is the list of all softwares, plugins, extensions, etc, that I use.
 * ReText
 * skype
 * dropbox
-* password manager
-* todoist
-* evernote
-* trello
-* workflowy
-* gliffy
+* lastpass
 * tlp
 * system load indicator
 * preload
-* toggl
+* caffeine
 * redshift
