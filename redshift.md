@@ -1,1 +1,0 @@
-Installed from Software Center
