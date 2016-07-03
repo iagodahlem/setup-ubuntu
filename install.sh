@@ -3,7 +3,7 @@
 # Ask for the administrator password upfront
 sudo -v
 
-#
+# Brick by brick
 set -eo pipefail
 
 # Repositories
