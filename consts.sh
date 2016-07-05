@@ -1,1 +1,4 @@
-readonly PREFIX_ICON="→"
+#!bin/bash
+
+readonly ARROW='→'
+readonly CHECK='✔'
