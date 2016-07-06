@@ -1,15 +1,17 @@
-#
+#!/bin/sh
+
+#---------------------------------------------------------------------
 # Ubuntu
 #
 # Configurations, UI and performance tweaks
 # --------------------------------------------------------------------
 
-# Always show options menu
 gsettings set com.canonical.Unity always-show-menus true
+msg_ok 'Always show options menu'
 
-# Show all startup application files
 sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
+msg_ok 'Show all startup application files'
 
-# Uses swap when memory is on 90% of capacity
 sudo sysctl vm.swappiness=10
 sudo echo vm.swappiness=10 >> /etc/sysctl.conf
+msg_ok 'Uses swap only when memory is on 90% of capacity'
