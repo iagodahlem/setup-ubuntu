@@ -1,5 +1,5 @@
-#!bin/bash
+#!bin/sh
 
-readonly ARROW='→'
-readonly CHECK='✔'
-readonly CLOSE="✗"
+ARROW="→"
+CHECK="✔"
+CLOSE="✗"
