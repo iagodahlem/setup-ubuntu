@@ -10,6 +10,8 @@ My personal setup files.
 
 > - [] TODO: Make apps list
 > - [] TODO: Make configs list
+> - [] TODO: Make after setup commands
+	- sudo echo vm.swappiness=10 >> /etc/sysctl.conf
 
 ## Contributing
 
