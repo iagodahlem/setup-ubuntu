@@ -49,17 +49,17 @@ msg " then run \033[1;32m$ source ./setup.sh\033[0m to all magic happen."
 msg ""
 
 # Upgrade
-# sudo apt-get update &> /dev/null
-msg_ok 'update'
+sudo apt-get update &> /dev/null
+msg_ok "update"
 
-# sudo apt-get upgrade -y &> /dev/null
-msg_ok 'upgrade'
+sudo apt-get upgrade -y &> /dev/null
+msg_ok "upgrade"
 
-# sudo apt-get dist-upgrade -y &> /dev/null
-msg_ok 'dist-upgrade'
+sudo apt-get dist-upgrade -y &> /dev/null
+msg_ok "dist-upgrade"
 
 # Git
-if which git &> /dev/null; then
+if ! [[ -x "$(command -v git)" ]]; then
 	sudo apt-get install -y \
 		git \
 		git-core
@@ -68,20 +68,20 @@ msg_ok "git"
 
 # ZSH
 if ! which zsh &> /dev/null; then
-	msg_run 'zsh' 'apt-get install'
+	msg_run "zsh" "apt-get install"
 	sudo apt-get install &> /dev/null zsh
 	chsh -s $(which zsh)
 fi
-msg_ok 'zsh'
+msg_ok "zsh"
 
 # Setup
 if ! [[ -d "$HOME/.dotfiles" ]]; then
 	git clone https://github.com/iagodahlem/setup.git $HOME/.setup
 fi
-msg_ok 'setup'
+msg_ok "setup"
 
 msg ""
-msg_ok 'Finished'
-msg ''
-msg ' Log out and login back again to use your new default shell...'
-msg ''
+msg_ok "Finished"
+msg ""
+msg " Log out and login back again to use your new default shell..."
+msg ""

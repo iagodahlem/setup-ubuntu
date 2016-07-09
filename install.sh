@@ -52,8 +52,7 @@ msg_ok "caffeine"
 
 # Chrome Stable
 if has_not google-chrome-stable; then
-	cd ~/Downloads
-	wget -O chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	wget -O ~/Downloads/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg --force-depends -i chrome.deb
 	sudo apt-get install -fy
 	rm chrome.deb
@@ -127,8 +126,7 @@ msg_ok "skype"
 
 # Slack
 if has_not slack; then
-	cd ~/Downloads
-	wget -O slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb
+	wget -O ~/Downloads/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb
 	sudo dpkg --force-depends -i slack.deb
 	sudo apt-get install -fy
 	rm slack.deb
@@ -163,8 +161,7 @@ fi
 msg_ok "tlp"
 
 if has_not vagrant; then
-	cd ~/Downloads
-	wget -O vagrant.deb https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb
+	wget -O ~/Downloads/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb
 	sudo dpkg --force-depends -i vagrant.deb
 	sudo apt-get install -fy
 	rm vagrant.deb
@@ -175,16 +172,15 @@ if has_not virtualbox; then
 	sudo apt-get install -y \
 		virtualbox \
 		virtualbox-dkms
+fi
 msg_ok "virtualbox"
 
 # cd ~/.custom/plugins && git clone https://github.com/wbinglee/zsh-wakatime.git && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd ~/
 
 # Cleanup
-sudo apt-get autoclean -y
-sudo apt-get autoremove -y
+sudo apt-get autoclean &> /dev/null -y
+sudo apt-get autoremove &> /dev/null -y
 
 source ~/.zshrc
 
-msg ''
-msg_ok 'Installation finished...'
-msg ''
+msg ""
