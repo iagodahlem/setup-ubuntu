@@ -66,7 +66,7 @@ msg_ok "git"
 # ZSH
 if ! which zsh &> /dev/null; then
 	msg_run "zsh" "apt-get install"
-	sudo apt-get install zsh &> /dev/null
+	sudo apt-get install zsh
 	chsh -s $(which zsh)
 fi
 msg_ok "zsh"
