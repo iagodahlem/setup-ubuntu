@@ -3,9 +3,6 @@
 # Ask for the administrator password upfront
 sudo -v
 
-# Tells the shell script to exit if it encounters an error
-set -e
-
 ARROW="→"
 CHECK="✔"
 
@@ -69,7 +66,7 @@ msg_ok "git"
 # ZSH
 if ! which zsh &> /dev/null; then
 	msg_run "zsh" "apt-get install"
-	sudo apt-get install &> /dev/null zsh
+	sudo apt-get install zsh &> /dev/null
 	chsh -s $(which zsh)
 fi
 msg_ok "zsh"
