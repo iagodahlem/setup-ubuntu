@@ -18,14 +18,6 @@ function msg_ok() {
 	echo "$ARROW\033[1;32m  $1 $CHECK\033[0m";
 }
 
-function msg_run() {
-	echo "$ARROW\033[1;35m  $1 $ $2\033[0m";
-}
-
-function msg_done() {
-	echo "$ARROW\033[1;37m  $1 \033[0m";
-}
-
 msg ""
 msg_bold "    _____      _ "
 msg_bold "   / ____|    | | "
@@ -65,7 +57,6 @@ msg_ok "git"
 
 # ZSH
 if ! which zsh &> /dev/null; then
-	msg_run "zsh" "apt-get install"
 	sudo apt-get install zsh
 	chsh -s $(which zsh)
 fi
