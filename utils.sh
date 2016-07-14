@@ -23,14 +23,6 @@ function msg_ok() {
 	echo "$ARROW\033[1;32m  $1 $CHECK\033[0m";
 }
 
-function msg_run() {
-	echo "$ARROW\033[1;35m  $1 $ $2\033[0m";
-}
-
-function msg_done() {
-	echo "$ARROW\033[1;37m  $1 \033[0m";
-}
-
 # Conditions
 # ----------------------------------
 
