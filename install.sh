@@ -119,6 +119,14 @@ msg_ok "nvm, npm modules"
 if has_not_dir "$HOME/.oh-my-zsh"; then
 	chsh -s /usr/bin/zsh
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+	# Plugins
+	git clone https://github.com/wbinglee/zsh-wakatime.git ~/.custom/plugins/zsh-wakatime
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.custom/plugins/zsh-syntax-highlighting
+
+	# Themes
+	wget https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme -O ~/.custom/themes/dracula.zsh-theme
+
 fi
 msg_ok "oh-my-zsh"
 
@@ -196,8 +204,6 @@ if has_not virtualbox; then
 		virtualbox-dkms
 fi
 msg_ok "virtualbox"
-
-# cd ~/.custom/plugins && git clone https://github.com/wbinglee/zsh-wakatime.git && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git && cd ~/
 
 # Cleanup
 sudo apt-get autoclean &> /dev/null -y
