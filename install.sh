@@ -8,14 +8,9 @@ sudo apt-get install -y \
 	chromium-browser \
 	curl \
 	indicator-multiload \
-	libboost-regex-dev \
-	libgtk2.0-dev \
-	libqt5x11extras5-dev \
 	meld \
 	openssh-server \
 	preload \
-	qt5-default \
-	qt5-qmake \
 	smbclient \
 	ubuntu-restricted-extras \
 	unity-tweak-tool \
@@ -27,14 +22,9 @@ msg_ok "chromium-browser"
 msg_ok "curl"
 msg_ok "htop"
 msg_ok "indicator-multiload"
-msg_ok "libboost-regex-dev"
-msg_ok "libgtk2.0-dev"
-msg_ok "libqt5x11extras5-dev"
 msg_ok "meld"
 msg_ok "openssh-server"
 msg_ok "preload"
-msg_ok "qt5-default"
-msg_ok "qt5-qmake"
 msg_ok "smbclient"
 msg_ok "ubuntu-restricted-extras"
 msg_ok "unity-tweak-tool"
@@ -67,6 +57,36 @@ if has_not_dir "$HOME/.java"; then
 	sudo apt-get install oracle-java8-set-default
 fi
 msg_ok "java 8"
+
+# Mutate
+if has_not mutate; then
+	# Dependencies
+	sudo apt-get install -y \
+		qt5-qmake \
+		qt5-default \
+		libgtk2.0-dev \
+		libqt5x11extras5-dev \
+		libboost-regex-dev
+
+	# Mutate
+	git clone https://github.com/qdore/Mutate.git ~/.softwares/Mutate
+	cd ~/.softwares/Mutate/src
+	qmake
+	make
+
+	sudo make install
+	cd ..
+	sudo cp info/mutate.png /usr/share/icons
+	sudo cp info/Mutate.desktop /usr/share/applications
+	mkdir -p ~/.config/Mutate
+	cp -R config/* ~/.config/Mutate
+	chmod -R a+x ~/.config/Mutate/scripts
+	chmod -R a+w ~/.config/Mutate
+	sed -i "s|{home}|$HOME|g" ~/.config/Mutate/config.ini
+
+	cd ~
+fi
+msg_ok "mutate"
 
 # NVM
 if has_not_dir "$HOME/.nvm"; then
