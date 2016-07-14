@@ -16,6 +16,7 @@ sudo apt-get install -y \
 	unity-tweak-tool \
 	vim \
 	vlc \
+	xclip \
 	xsel
 msg_ok "build-essential"
 msg_ok "chromium-browser"
@@ -30,6 +31,7 @@ msg_ok "ubuntu-restricted-extras"
 msg_ok "unity-tweak-tool"
 msg_ok "vim"
 msg_ok "vlc"
+msg_ok "xclip"
 msg_ok "xsel"
 
 # Caffeine
