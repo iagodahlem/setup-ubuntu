@@ -166,7 +166,9 @@ msg_ok "pip"
 
 # Redshift
 if has_not redshift; then
-	sudo apt-get install redshift -y
+	sudo apt-get install -y \
+		redshift \
+		redshift-gtk
 fi
 msg_ok "redshift"
 
