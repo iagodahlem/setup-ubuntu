@@ -231,6 +231,7 @@ if has_not vagrant; then
 fi
 msg_ok "vagrant"
 
+# Virtualbox
 if has_not virtualbox; then
 	sudo apt-get install -y \
 		virtualbox \
