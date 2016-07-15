@@ -45,9 +45,9 @@ msg_ok "caffeine"
 # Chrome Stable
 if has_not google-chrome-stable; then
 	wget -O ~/Downloads/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg --force-depends -i chrome.deb
+	sudo dpkg --force-depends -i ~/Downloads/chrome.deb
 	sudo apt-get install -fy
-	rm chrome.deb
+	rm ~/Downloads/chrome.deb
 fi
 msg_ok "chrome stable"
 
@@ -126,7 +126,6 @@ if has_not_dir "$HOME/.oh-my-zsh"; then
 
 	# Themes
 	wget https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme -O ~/.custom/themes/dracula.zsh-theme
-
 fi
 msg_ok "oh-my-zsh"
 
@@ -157,9 +156,9 @@ msg_ok "skype"
 # Slack
 if has_not slack; then
 	wget -O ~/Downloads/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-2.1.0-amd64.deb
-	sudo dpkg --force-depends -i slack.deb
+	sudo dpkg --force-depends -i ~/Downloads/slack.deb
 	sudo apt-get install -fy
-	rm slack.deb
+	rm ~/Downloads/slack.deb
 fi
 msg_ok "slack"
 
@@ -192,9 +191,9 @@ msg_ok "tlp"
 
 if has_not vagrant; then
 	wget -O ~/Downloads/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb
-	sudo dpkg --force-depends -i vagrant.deb
+	sudo dpkg --force-depends -i ~/Downloads/vagrant.deb
 	sudo apt-get install -fy
-	rm vagrant.deb
+	rm ~/Downloads/vagrant.deb
 fi
 msg_ok "vagrant"
 

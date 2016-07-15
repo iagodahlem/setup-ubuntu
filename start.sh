@@ -57,14 +57,14 @@ msg_ok "git"
 
 # ZSH
 if ! which zsh &> /dev/null; then
-	sudo apt-get install zsh
+	sudo apt-get install zsh -y
 	chsh -s $(which zsh)
 fi
 msg_ok "zsh"
 
 # Setup
-if ! [[ -d "$HOME/.dotfiles" ]]; then
-	git clone https://github.com/iagodahlem/setup.git $HOME/.setup
+if ! [[ -d "$HOME/.setup" ]]; then
+	git clone git@github.com:iagodahlem/setup.git $HOME/.setup
 fi
 msg_ok "setup"
 
