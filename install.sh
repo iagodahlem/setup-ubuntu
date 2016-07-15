@@ -164,6 +164,21 @@ if has_not pip; then
 fi
 msg_ok "pip"
 
+# Redshift
+if has_not redshift; then
+	sudo apt-get install redshift -y
+fi
+msg_ok "redshift"
+
+# Rescuetime
+if has_not rescuetime; then
+	wget -O ~/Downloads/rescuetime.deb https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
+	sudo dpkg --force-depends -i ~/Downloads/rescuetime.deb
+	sudo apt-get install -fy
+	rm ~/Downloads/rescuetime.deb
+fi
+msg_ok "slack"
+
 # Skype
 if has_not skype; then
 	sudo sh -c 'echo "deb http://archive.canonical.com/ubuntu trusty partner" >> /etc/apt/sources.list.d/canonical_partner.list'
