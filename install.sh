@@ -79,6 +79,12 @@ if has_not_dir "$HOME/.java"; then
 fi
 msg_ok "java 8"
 
+# Maven
+if has_not mvn; then
+	sudo apt-get install maven
+fi
+msg_ok "maven"
+
 # Mutate
 if has_not mutate; then
 	# Dependencies
