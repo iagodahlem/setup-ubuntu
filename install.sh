@@ -70,6 +70,15 @@ if has_not docker; then
 fi
 msg_ok "docker"
 
+# Gitkraken
+if has_not gitkraken; then
+	wget -O ~/Downloads/gitkraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
+	sudo dpkg --force-depends -i ~/Downloads/gitkraken.deb
+	sudo apt-get install -fy
+	rm ~/Downloads/gitkraken.deb
+fi
+msg_ok "gitkraken"
+
 # Java
 if has_not_dir "$HOME/.java"; then
 	sudo add-apt-repository -y ppa:webupd8team/java
