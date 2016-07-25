@@ -230,6 +230,12 @@ if has_not subl; then
 fi
 msg_ok "sublime"
 
+# Shutter
+if has_not shutter; then
+	sudo apt-get -y install shutter
+fi
+msg_ok "shutter"
+
 # Tlp
 if has_not tlp; then
 	sudo apt-get remove laptop-mode-tools -y
