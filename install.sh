@@ -147,7 +147,7 @@ if has_not_dir "$HOME/.nvm"; then
 		webpack \
 		yo
 fi
-msg_ok "nvm, npm modules"
+msg_ok "nvm, node, npm modules"
 
 # Oh My ZSH
 if has_not_dir "$HOME/.oh-my-zsh"; then
