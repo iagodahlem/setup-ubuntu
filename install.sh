@@ -70,6 +70,12 @@ if has_not docker; then
 fi
 msg_ok "docker"
 
+# Gimp
+if has_not gimp; then
+	sudo apt-get install gimp -y
+fi
+msg_ok "gimp"
+
 # Gitkraken
 if has_not gitkraken; then
 	wget -O ~/Downloads/gitkraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
