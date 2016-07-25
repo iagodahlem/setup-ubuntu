@@ -194,7 +194,7 @@ if has_not rescuetime; then
 	sudo apt-get install -fy
 	rm ~/Downloads/rescuetime.deb
 fi
-msg_ok "slack"
+msg_ok "rescuetime"
 
 # Skype
 if has_not skype; then
