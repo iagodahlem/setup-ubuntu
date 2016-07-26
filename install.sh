@@ -143,6 +143,7 @@ if has_not_dir "$HOME/.nvm"; then
 		babel \
 		bower \
 		browserify \
+		clima-app \
 		csscomb \
 		empty-trash-cli \
 		eslint \
