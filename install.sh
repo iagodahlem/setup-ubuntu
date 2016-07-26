@@ -2,7 +2,7 @@
 
 hello
 
-# Installs
+# General installs
 sudo apt-get install -y \
 	build-essential \
 	chromium-browser \
