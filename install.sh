@@ -70,6 +70,21 @@ if has_not docker; then
 fi
 msg_ok "docker"
 
+# Gimp
+if has_not gimp; then
+	sudo apt-get install gimp -y
+fi
+msg_ok "gimp"
+
+# Gitkraken
+if has_not gitkraken; then
+	wget -O ~/Downloads/gitkraken.deb https://release.gitkraken.com/linux/gitkraken-amd64.deb
+	sudo dpkg --force-depends -i ~/Downloads/gitkraken.deb
+	sudo apt-get install -fy
+	rm ~/Downloads/gitkraken.deb
+fi
+msg_ok "gitkraken"
+
 # Java
 if has_not_dir "$HOME/.java"; then
 	sudo add-apt-repository -y ppa:webupd8team/java
@@ -78,6 +93,12 @@ if has_not_dir "$HOME/.java"; then
 	sudo apt-get install oracle-java8-set-default
 fi
 msg_ok "java 8"
+
+# Maven
+if has_not mvn; then
+	sudo apt-get install maven
+fi
+msg_ok "maven"
 
 # Mutate
 if has_not mutate; then
@@ -132,7 +153,7 @@ if has_not_dir "$HOME/.nvm"; then
 		webpack \
 		yo
 fi
-msg_ok "nvm, npm modules"
+msg_ok "nvm, node, npm modules"
 
 # Oh My ZSH
 if has_not_dir "$HOME/.oh-my-zsh"; then
@@ -179,7 +200,7 @@ if has_not rescuetime; then
 	sudo apt-get install -fy
 	rm ~/Downloads/rescuetime.deb
 fi
-msg_ok "slack"
+msg_ok "rescuetime"
 
 # Skype
 if has_not skype; then
@@ -214,6 +235,12 @@ if has_not subl; then
 	sudo apt-get -y install sublime-text-installer
 fi
 msg_ok "sublime"
+
+# Shutter
+if has_not shutter; then
+	sudo apt-get -y install shutter
+fi
+msg_ok "shutter"
 
 # Tlp
 if has_not tlp; then
