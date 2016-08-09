@@ -203,6 +203,14 @@ if has_not rescuetime; then
 fi
 msg_ok "rescuetime"
 
+# RVM
+if has_not rvm; then
+	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+	\curl -sSL https://get.rvm.io | bash -s stable --ruby
+	source /home/iago/.rvm/scripts/rvm
+fi
+msg_ok "rvm"
+
 # Skype
 if has_not skype; then
 	sudo sh -c 'echo "deb http://archive.canonical.com/ubuntu trusty partner" >> /etc/apt/sources.list.d/canonical_partner.list'
