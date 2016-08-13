@@ -203,13 +203,19 @@ if has_not rescuetime; then
 fi
 msg_ok "rescuetime"
 
-# RVM
-if has_not rvm; then
-	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-	\curl -sSL https://get.rvm.io | bash -s stable --ruby
-	source /home/iago/.rvm/scripts/rvm
+# rbenv
+if has_not rbenv; then
+	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	cd ~/.rbenv && src/configure && make -C src
 fi
-msg_ok "rvm"
+msg_ok "rbenv"
+
+# ruby-build
+if has_not_dir ~/.rbenv/plugins/ruby-build; then
+	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+	rbenv install 2.2.3
+fi
+msg_ok "ruby-build"
 
 # Skype
 if has_not skype; then
