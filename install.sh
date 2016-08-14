@@ -170,17 +170,29 @@ if has_not_dir "$HOME/.oh-my-zsh"; then
 fi
 msg_ok "oh-my-zsh"
 
+# Oracle SQL Developer
+if has_not sqldeveloper; then
+	sudo apt-get install -y alien
+	# wget
+	sudo alien --scripts sqldeveloper.rpm
+	sudo dpkg -i sqldeveloper.deb
+fi
+msg_ok "oracle sql developer"
+
 # Pip
 if has_not pip; then
 	sudo apt-get install -y \
 		python-dev \
 		python-pip \
 		python-software-properties
+
 	sudo pip install --upgrade \
 		pip \
 		virtualenv
+
 	sudo pip install \
 		psutil \
+		Pygments \
 		thefuck \
 		wakatime
 fi
