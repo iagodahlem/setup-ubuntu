@@ -179,14 +179,14 @@ if has_not sqldeveloper; then
 fi
 msg_ok "oracle sql developer"
 
-# Opera
-if has_not opera; then
+# Opera Developer
+if has_not opera-developer; then
 	wget -O ~/Downloads/opera.deb http://download2.operacdn.com/pub/opera-developer/41.0.2329.0/linux/opera-developer_41.0.2329.0_amd64.deb
 	sudo dpkg --force-depends -i ~/Downloads/opera.deb
 	sudo apt-get install -fy
 	rm ~/Downloads/opera.deb
 fi
-msg_ok "opera"
+msg_ok "opera developer"
 
 # Pip
 if has_not pip; then
