@@ -226,6 +226,7 @@ msg_ok "rescuetime"
 if has_not rbenv; then
 	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 	cd ~/.rbenv && src/configure && make -C src
+	cd -
 fi
 msg_ok "rbenv"
 
