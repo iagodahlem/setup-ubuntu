@@ -8,7 +8,6 @@ sudo apt-get install -y \
 	chromium-browser \
 	curl \
 	indicator-multiload \
-	meld \
 	openssh-server \
 	preload \
 	smbclient \
@@ -23,7 +22,6 @@ msg_ok "chromium-browser"
 msg_ok "curl"
 msg_ok "htop"
 msg_ok "indicator-multiload"
-msg_ok "meld"
 msg_ok "openssh-server"
 msg_ok "preload"
 msg_ok "smbclient"
@@ -305,6 +303,12 @@ fi
 msg_ok "virtualbox"
 
 # Cleanup
+
+sudo apt-get purge \
+	aisleriot \
+	gnome-mahjongg \
+	gnome-mines
+
 sudo apt-get autoclean &> /dev/null -y
 sudo apt-get autoremove &> /dev/null -y
 
