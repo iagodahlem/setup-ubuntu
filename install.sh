@@ -49,6 +49,16 @@ if has_not google-chrome-stable; then
 fi
 msg_ok "chrome stable"
 
+# Dbeaver
+
+if has_not dbeaver; then
+	wget -O ~/Downloads/dbeaver.deb http://dbeaver.jkiss.org/files/3.7.4/dbeaver-ce_3.7.4_amd64.deb
+	sudo dpkg --force-depends -i ~/Downloads/dbeaver.deb
+	sudo apt-get install -fy
+	rm ~/Downloads/dbeaver.deb
+fi
+msg_ok "dbeaver"
+
 # Docker
 if has_not docker; then
 	sudo apt-get update
@@ -167,15 +177,6 @@ if has_not_dir "$HOME/.oh-my-zsh"; then
 	wget https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme -O ~/.custom/themes/dracula.zsh-theme
 fi
 msg_ok "oh-my-zsh"
-
-# Oracle SQL Developer
-if has_not sqldeveloper; then
-	sudo apt-get install -y alien
-	# wget
-	sudo alien --scripts sqldeveloper.rpm
-	sudo dpkg -i sqldeveloper.deb
-fi
-msg_ok "oracle sql developer"
 
 # Opera Developer
 if has_not opera-developer; then
