@@ -225,18 +225,26 @@ msg_ok "rescuetime"
 
 # rbenv
 if has_not rbenv; then
+	sudo apt-get install -y \
+		autoconf \
+		bison \
+		build-essential \
+		libssl-dev \
+		libyaml-dev \
+		libreadline6-dev \
+		zlib1g-dev \
+		libncurses5-dev \
+		libffi-dev \
+		libgdbm3 \
+		libgdbm-dev
+
 	git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 	cd ~/.rbenv && src/configure && make -C src
 	cd -
-fi
-msg_ok "rbenv"
 
-# ruby-build
-if has_not_dir ~/.rbenv/plugins/ruby-build; then
 	git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-	rbenv install 2.2.3
 fi
-msg_ok "ruby-build"
+msg_ok "rbenv, ruby-build"
 
 # Skype
 if has_not skype; then
