@@ -297,7 +297,7 @@ fi
 msg_ok "tlp"
 
 if has_not vagrant; then
-	wget -O ~/Downloads/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.4/vagrant_1.8.4_x86_64.deb
+	wget -O ~/Downloads/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.6/vagrant_1.8.6_x86_64.deb
 	sudo dpkg --force-depends -i ~/Downloads/vagrant.deb
 	sudo apt-get install -fy
 	rm ~/Downloads/vagrant.deb
